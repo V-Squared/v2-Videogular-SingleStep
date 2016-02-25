@@ -86,7 +86,7 @@ angular.module('videogular')
 				currentTimeClean = parseFloat(currentTimeClean);
 				console.log(currentTimeClean);
 
-				//API.mediaElement[0].currentTime = currentTimeClean;
+				API.seekTime(currentTimeClean);
 
 				console.log(API.mediaElement[0].currentTime);
 			}
