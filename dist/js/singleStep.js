@@ -10,17 +10,20 @@ angular.module('videogular')
 		</a>'
 	);
 })
-.directive('singleStep',function($timeout) {
+.directive('singleStep',function() {
 	return {
 		restrict: 'E',
 		require:'^videogular',
 		templateUrl:'stepButtons.html',
 		scope: {
-			frameRate : '@'
+			frameRate : '=',
+			theme : '='
 		},
 		link: function (scope,element,attrs,API) {
 
 			//Init
+
+			initTheme(scope.theme);
 
 			if(scope.frameRate) {
 				var frameDuration = 1 / scope.frameRate;
@@ -43,7 +46,6 @@ angular.module('videogular')
 		        else
 		          API.seekTime(API.totalTime / 1000);
 
-		      	cleanCurrentTime();
 		      	API.pause();
 			}
 
@@ -54,27 +56,39 @@ angular.module('videogular')
 				if(currentTime != duration - 0.04)
 				  API.seekTime(currentTime += frameDuration);
 				else
-				  API.seekTime(0);
+				  API.seekTime(0.01);
 
-				cleanCurrentTime();
 				API.pause();
 			}
 
 
-
 			//Functions
+
+			function initTheme (theme) {
+				if(theme) {
+					var headElem = angular.element(document).find("head");
+					headElem.append("<link rel='stylesheet' href='" + theme + "'>");
+				} else {
+					throw new Error('A theme attribute is required on the singleStep directive');
+				}
+			}
 
 			function cleanCurrentTime () {
 				var currentTime = API.currentTime / 1000;
 				var frameNumber = Math.trunc(currentTime / frameDuration);
+				console.log("frameNumber : " + frameNumber);
 				var currentTimeClean = frameNumber * frameDuration;
 				currentTimeClean = +currentTimeClean.toFixed('6');
 				currentTimeClean = parseFloat(currentTimeClean);
+				console.log("frameBorder : " + currentTimeClean);
 				currentTimeClean += 0.01;
 				currentTimeClean = +currentTimeClean.toFixed('6');
 				currentTimeClean = parseFloat(currentTimeClean);
+				console.log(currentTimeClean);
 
-				API.seekTime(currentTimeClean);
+				//API.mediaElement[0].currentTime = currentTimeClean;
+
+				console.log(API.mediaElement[0].currentTime);
 			}
 
 
@@ -85,7 +99,10 @@ angular.module('videogular')
                     return API.currentState;
                 },
                 function(newState,oldState) {
-                	if(newState == 'pause') cleanCurrentTime();
+                	if(newState == 'pause') {
+                		console.log("before cleanCurrentTime : " + API.mediaElement[0].currentTime);
+                		cleanCurrentTime();
+                	}
 				}
 			);
 
