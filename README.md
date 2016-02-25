@@ -22,3 +22,7 @@ Both properties are required.
 1. right-clicking it and click on properties
 2. go to the Details tab
 3. scroll to the video section and you can see the frame rate property
+
+## My sublime theme
+
+if you are interested on the theme, it's called brogrammer
