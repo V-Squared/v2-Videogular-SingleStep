@@ -10,6 +10,7 @@ add singleStep tag inside videogular:
 ![](docs/images/setup-singleStep-html.png)
 
 and add this following in the controller:
+![](docs/images/setup-singleStep-controller.png)
 
 Notice the 2 attributes.
 
