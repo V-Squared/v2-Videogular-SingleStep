@@ -6,11 +6,8 @@ The video will go 1 frame backward when pausing if using a video that's not 20fp
 
 # Setup
 
-## Step1: Add singleStep tag inside videogular:
+## Add singleStep tag inside videogular:
 ![](docs/images/setup-singleStep-html.png)
-
-## Step 2: Add this following in the controller:
-![](docs/images/setup-singleStep-controller.png)
 
 ## Notice the 2 properties.
 
