@@ -76,19 +76,15 @@ angular.module('videogular')
 			function cleanCurrentTime () {
 				var currentTime = API.currentTime / 1000;
 				var frameNumber = Math.trunc(currentTime / frameDuration);
-				console.log("frameNumber : " + frameNumber);
 				var currentTimeClean = frameNumber * frameDuration;
 				currentTimeClean = +currentTimeClean.toFixed('6');
 				currentTimeClean = parseFloat(currentTimeClean);
-				console.log("frameBorder : " + currentTimeClean);
 				currentTimeClean += 0.01;
 				currentTimeClean = +currentTimeClean.toFixed('6');
 				currentTimeClean = parseFloat(currentTimeClean);
-				console.log(currentTimeClean);
 
 				API.seekTime(currentTimeClean);
 
-				console.log(API.mediaElement[0].currentTime);
 			}
 
 
@@ -100,7 +96,6 @@ angular.module('videogular')
                 },
                 function(newState,oldState) {
                 	if(newState == 'pause') {
-                		console.log("before cleanCurrentTime : " + API.mediaElement[0].currentTime);
                 		cleanCurrentTime();
                 	}
 				}
