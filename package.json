@@ -1,0 +1,30 @@
+{
+  "name": "v2-videogular-singlestep",
+  "version": "1.0.0",
+  "description": "A videogular singleStep directive to help you to go 1 frame forward/backward in your video.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V-Squared/v2-Videogular-SingleStep.git"
+  },
+  "author": "Lukas Chen",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/V-Squared/v2-Videogular-SingleStep/issues"
+  },
+ "dependencies" : {
+    "angular"    : "",
+    "angular-sanitize"   : "",
+    "videogular"     : "",
+    "videogular-themes-default":"",
+    "videogular-controls" : "",
+    "videogular-controls" : "",
+    "videogular-buffering" : "",
+    "videogular-overlay-play" : "",
+    "videogular-poster" : ""
+  },
+  "homepage": "https://github.com/V-Squared/v2-Videogular-SingleStep#readme"
+}

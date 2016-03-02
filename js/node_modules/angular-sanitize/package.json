@@ -1,0 +1,68 @@
+{
+  "name": "angular-sanitize",
+  "version": "1.5.0",
+  "description": "AngularJS module for sanitizing HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "html",
+    "client-side"
+  ],
+  "author": {
+    "name": "Angular Core Team",
+    "email": "angular-core+npm@google.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "homepage": "http://angularjs.org",
+  "gitHead": "ba852e624a011a529197a53957063712094898bf",
+  "_id": "angular-sanitize@1.5.0",
+  "_shasum": "7b9a01dd6b5736d0d5872933f03d1cfb9c188d2a",
+  "_from": "angular-sanitize@latest",
+  "_npmVersion": "2.14.12",
+  "_nodeVersion": "4.2.6",
+  "_npmUser": {
+    "name": "angularcore",
+    "email": "angular-core+npm@google.com"
+  },
+  "maintainers": [
+    {
+      "name": "akalinovski",
+      "email": "a.kalinovski@gmail.com"
+    },
+    {
+      "name": "angularcore",
+      "email": "angular-core+npm@google.com"
+    },
+    {
+      "name": "petebd",
+      "email": "pete@bacondarwin.com"
+    },
+    {
+      "name": "pitbeast",
+      "email": "PitBeast777@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "7b9a01dd6b5736d0d5872933f03d1cfb9c188d2a",
+    "tarball": "http://registry.npmjs.org/angular-sanitize/-/angular-sanitize-1.5.0.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-9-west.internal.npmjs.com",
+    "tmp": "tmp/angular-sanitize-1.5.0.tgz_1454673812158_0.897649428807199"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/angular-sanitize/-/angular-sanitize-1.5.0.tgz",
+  "readme": "ERROR: No README data found!"
+}
