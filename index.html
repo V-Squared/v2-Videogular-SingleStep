@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="videoDemo">
     <head>
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="dependencies/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet" href="css/style.css" type="text/css" />
         
-        <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+        <script type="text/javascript" src="dependencies/angular/angular.js"></script>
         <script type="text/javascript">
             angular.module('videoDemo',[
     			"ngSanitize",
@@ -19,7 +19,7 @@
         
         <div class="container">
             <div class="videogular-container" ng-controller="videoCtrl as vm">
-                <videogular vg-theme="'node_modules/videogular-themes-default/videogular.css'">
+                <videogular vg-theme="'dependencies/videogular-themes-default/videogular.css'">
                     <vg-media vg-src="vm.config.sources"></vg-media>
                     <vg-controls>
 				        <vg-play-pause-button></vg-play-pause-button>
@@ -41,12 +41,12 @@
             </div>
         </div>
         
-        <script type="text/javascript" src="node_modules/angular-sanitize/angular-sanitize.js"></script>
-        <script type="text/javascript" src="node_modules/videogular/videogular.js"></script>
-        <script type="text/javascript" src="node_modules/videogular-controls/vg-controls.js"></script>
-        <script type="text/javascript" src="node_modules/videogular-buffering/vg-buffering.js"></script>
-        <script type="text/javascript" src="node_modules/videogular-overlay-play/vg-overlay-play.js"></script>
-        <script type="text/javascript" src="node_modules/videogular-poster/vg-poster.js"></script>
+        <script type="text/javascript" src="dependencies/angular-sanitize/angular-sanitize.js"></script>
+        <script type="text/javascript" src="dependencies/videogular/videogular.js"></script>
+        <script type="text/javascript" src="dependencies/videogular-controls/vg-controls.js"></script>
+        <script type="text/javascript" src="dependencies/videogular-buffering/vg-buffering.js"></script>
+        <script type="text/javascript" src="dependencies/videogular-overlay-play/vg-overlay-play.js"></script>
+        <script type="text/javascript" src="dependencies/videogular-poster/vg-poster.js"></script>
         <script type="text/javascript" src="js/controllers/videogular.js"></script>
     </body>
 </html>
