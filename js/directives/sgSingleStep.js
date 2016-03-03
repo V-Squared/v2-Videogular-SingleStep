@@ -16,7 +16,7 @@ angular.module('v2.singlestep',[])
 		require:'^videogular',
 		templateUrl:'stepButtons.html',
 		scope: {
-			frameRate : '=',
+			sgFrameRate : '=',
 			sgTheme : '='
 		},
 		link: function (scope,element,attrs,API) {
@@ -25,8 +25,8 @@ angular.module('v2.singlestep',[])
 
 			initTheme(scope.sgTheme);
 
-			if(scope.frameRate) {
-				var frameDuration = 1 / scope.frameRate;
+			if(scope.sgFrameRate) {
+				var frameDuration = 1 / scope.sgFrameRate;
 				API.seekTime(0.01);
 			} else {
 				throw new Error('frameRate attribute is required on the stepButtons directive');
@@ -34,29 +34,38 @@ angular.module('v2.singlestep',[])
 
 
 
-
 			// User Event Functions
 
 			scope.previousFrame = function previousFrame () {
+				
+				cleanCurrentTime();
+				
 				var currentTime = API.currentTime / 1000,
 					duration = API.totalTime / 1000;
 
-				if(currentTime != 0.01)
+				if(currentTime != 0.01){
+				  currentTime -= frameDuration;
 				  API.seekTime(currentTime -= frameDuration);
-		        else
+				} else {
 		          API.seekTime(API.totalTime / 1000);
+		        }
 
 		      	API.pause();
 			};
 
 			scope.nextFrame = function nextFrame () {
+				
+				cleanCurrentTime();
+				
 				var currentTime = API.currentTime / 1000,
 					duration = API.totalTime / 1000;
 
-				if(currentTime != duration - 0.04)
+				if(currentTime != duration - 0.04){
+				  currentTime += frameDuration;
 				  API.seekTime(currentTime += frameDuration);
-				else
+				} else {
 				  API.seekTime(0.01);
+				}
 
 				API.pause();
 			};
@@ -77,6 +86,7 @@ angular.module('v2.singlestep',[])
 				var currentTime = API.currentTime / 1000;
 				var frameNumber = Math.trunc(currentTime / frameDuration);
 				var currentTimeClean = frameNumber * frameDuration;
+				console.log("frameNumber : " + currentTimeClean);
 				currentTimeClean = +currentTimeClean.toFixed('6');
 				currentTimeClean = parseFloat(currentTimeClean);
 				currentTimeClean += 0.01;
@@ -84,23 +94,10 @@ angular.module('v2.singlestep',[])
 				currentTimeClean = parseFloat(currentTimeClean);
 
 				API.seekTime(currentTimeClean);
+				console.log("currentTimeClean : " + currentTimeClean);
 
 			}
 
-
-			//Watchers
-
-			scope.$watch(
-				function () {
-                    return API.currentState;
-                },
-                function(newState,oldState) {
-                	if(newState == 'pause') {
-                		cleanCurrentTime();
-                	}
-				}
-			);
-
 		}
 	}
-})
+});
