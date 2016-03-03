@@ -1,4 +1,4 @@
-angular.module('v2.SingleStep',[])
+angular.module('v2.singlestep',[])
 .run(function($templateCache) {
 	$templateCache.put(
 		'stepButtons.html',
@@ -47,7 +47,7 @@ angular.module('v2.SingleStep',[])
 		          API.seekTime(API.totalTime / 1000);
 
 		      	API.pause();
-			}
+			};
 
 			scope.nextFrame = function nextFrame () {
 				var currentTime = API.currentTime / 1000,
@@ -59,7 +59,7 @@ angular.module('v2.SingleStep',[])
 				  API.seekTime(0.01);
 
 				API.pause();
-			}
+			};
 
 
 			//Functions

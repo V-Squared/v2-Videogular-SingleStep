@@ -15,16 +15,17 @@
   "bugs": {
     "url": "https://github.com/V-Squared/v2-Videogular-SingleStep/issues"
   },
- "dependencies" : {
-    "angular"    : "",
-    "angular-sanitize"   : "",
-    "videogular"     : "",
-    "videogular-themes-default":"",
-    "videogular-controls" : "",
-    "videogular-controls" : "",
-    "videogular-buffering" : "",
-    "videogular-overlay-play" : "",
-    "videogular-poster" : ""
+  "dependencies": {
+    "angular": "",
+    "angular-sanitize": "",
+    "bootstrap": "^3.3.6",
+    "videogular": "",
+    "videogular-buffering": "",
+    "videogular-controls": "",
+    "videogular-dash": "^1.4.1",
+    "videogular-overlay-play": "",
+    "videogular-poster": "",
+    "videogular-themes-default": ""
   },
   "homepage": "https://github.com/V-Squared/v2-Videogular-SingleStep#readme"
 }
